@@ -40,6 +40,7 @@ namespace TestRESTApi
             return Fluently.Configure().Database(dbConfigurer).Mappings(mc =>
             {
                 mc.FluentMappings.Add(typeof(WiperRigMap));
+                mc.FluentMappings.Add(typeof(TestsHistoryMap));
             }).BuildSessionFactory();
         }
 

@@ -13,7 +13,7 @@ namespace TestRESTApi.Controllers
     public class ResultsController : ApiController
     {
         private static DateTime LastProcessedDate = DateTime.Now.AddMinutes(-1);
-        public List<WiperRig> GetAllResults()
+        public List<WiperRig> GetResults()
         {
             var db = new DatabaseService(new NHibernateSessionProvider(ConfigurationManager.ConnectionStrings["WiperDBConfig"].ConnectionString));
             List<WiperRig> results;

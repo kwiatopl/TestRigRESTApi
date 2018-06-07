@@ -63,7 +63,6 @@
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\obj\Debug\TestRESTApi.csproj.CopyComplete
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\obj\Debug\TestRESTApi.dll
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\obj\Debug\TestRESTApi.pdb
-\\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\obj\Debug\TestRESTApi.csprojAssemblyReference.cache
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\bin\Antlr3.Runtime.dll
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\bin\FluentNHibernate.dll
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\bin\Iesi.Collections.dll
