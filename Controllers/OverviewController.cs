@@ -18,10 +18,7 @@ namespace TestRESTApi.Controllers
             var lastItem = db.GetAll<WiperRig>().OrderByDescending(p => p.TimeStamp).First();
             var firstItem = db.GetAll<WiperRig>().OrderBy(p => p.TimeStamp).First();
 
-            var timeStamp = lastItem.TimeStamp - firstItem.TimeStamp;
-            var secondsToFinish = (double)timeStamp.TotalSeconds / ((double)lastItem.CyclesSet - (double)lastItem.Countdown);
-            var secondsLeft = secondsToFinish * lastItem.Countdown;
-            var dateToFinish = DateTime.Now.AddSeconds(secondsLeft);
+            var dateToFinish = firstItem.TimeStamp.AddSeconds(firstItem.Countdown);
             var isError = false ;
 
             if( errorCount != 0 && errorCount > 0)
@@ -32,8 +29,8 @@ namespace TestRESTApi.Controllers
             var returnedObject = new Overview()
             {
                 TestType = lastItem.TestType,
-                TestStart = lastItem.TimeStamp.ToString("yyyy.MM.dd HH:mm:ss"),
-                EstimatedEndDate = dateToFinish.ToString("yyyy.MM.dd HH:mm:ss"),
+                TestStart = firstItem.TimeStamp.ToString("dd.MM.yyyy HH:mm:ss"),
+                EstimatedEndDate = dateToFinish.ToString("dd.MM.yyyy HH:mm:ss"),
                 CyclesSet = lastItem.CyclesSet,
                 Countdown = lastItem.Countdown,
                 AmountOfWater = lastItem.AmountOfWater,

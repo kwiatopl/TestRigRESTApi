@@ -25,8 +25,8 @@ namespace TestRESTApi.Controllers
                 {
                     Id = result.Id,
                     TestType = result.TestType,
-                    TimeStamp = result.TimeStamp.ToString("yyyy.MM.dd HH:mm:ss"),
-                    DeviceTimeStamp = result.DeviceTimeStamp.ToString("yyyy.MM.dd HH:mm:ss"),
+                    TimeStamp = result.TimeStamp.ToString("dd.MM.yyyy HH:mm:ss"),
+                    DeviceTimeStamp = result.DeviceTimeStamp.ToString("dd.MM.yyyy HH:mm:ss"),
                     CyclesSet = result.CyclesSet,
                     Countdown = result.Countdown,
                     AmountOfWater = result.AmountOfWater,

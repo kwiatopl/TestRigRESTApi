@@ -23,7 +23,7 @@ namespace TestRESTApi.Controllers
             sb.AppendFormat("Id;Test Type;TimeStamp;DeviceTimeStamp;Cycles Set;Countdown;Amount of Water;Wiper Motor Speed;Left Sensor; Right Sensor;{0}", Environment.NewLine);
             foreach (var result in results)
             {
-                sb.AppendFormat("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10}", result.Id, result.TestType, result.TimeStamp.ToString("yyyy.MM.dd HH:mm:ss"), result.DeviceTimeStamp.ToString("yyyy.MM.dd HH:mm:ss"), result.CyclesSet, result.Countdown, result.AmountOfWater, result.WiperMotorSpeed, result.LeftSensor, result.RightSensor, Environment.NewLine);
+                sb.AppendFormat("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10}", result.Id, result.TestType, result.TimeStamp.ToString("dd.MM.yyyy HH:mm:ss"), result.DeviceTimeStamp.ToString("dd.MM.yyyy HH:mm:ss"), result.CyclesSet, result.Countdown, result.AmountOfWater, result.WiperMotorSpeed, result.LeftSensor, result.RightSensor, Environment.NewLine);
             }
             var resultString = sb.ToString();
 

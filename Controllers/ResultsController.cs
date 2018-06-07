@@ -12,7 +12,7 @@ namespace TestRESTApi.Controllers
 {
     public class ResultsController : ApiController
     {
-        private static DateTime LastProcessedDate = DateTime.Now.AddMinutes(-1);
+        private static DateTime LastProcessedDate = DateTime.Now.AddSeconds(-1);
 
         public List<WiperRigModel> GetResults()
         {
@@ -21,6 +21,7 @@ namespace TestRESTApi.Controllers
             {
                 var db = new DatabaseService(new NHibernateSessionProvider(ConfigurationManager.ConnectionStrings["WiperDBConfig"].ConnectionString));
                 List<WiperRig> semiResults;
+                
                 semiResults = db.GetAll<WiperRig>(p => p.TimeStamp > LastProcessedDate).ToList();
                 LastProcessedDate = semiResults.Last().TimeStamp;
 
@@ -30,8 +31,8 @@ namespace TestRESTApi.Controllers
                     {
                         Id = result.Id,
                         TestType = result.TestType,
-                        TimeStamp = result.TimeStamp.ToString("yyyy.MM.dd HH:mm:ss"),
-                        DeviceTimeStamp = result.DeviceTimeStamp.ToString("yyyy.MM.dd HH:mm:ss"),
+                        TimeStamp = result.TimeStamp.ToString("dd.MM.yyyy HH:mm:ss"),
+                        DeviceTimeStamp = result.DeviceTimeStamp.ToString("dd.MM.yyyy HH:mm:ss"),
                         CyclesSet = result.CyclesSet,
                         Countdown = result.Countdown,
                         AmountOfWater = result.AmountOfWater,
@@ -49,6 +50,28 @@ namespace TestRESTApi.Controllers
             }
             
             return results;
+        }
+
+        public WiperRigModel GetResult(int id)
+        {
+            var db = new DatabaseService(new NHibernateSessionProvider(ConfigurationManager.ConnectionStrings["WiperDBConfig"].ConnectionString));
+            var result = db.GetAll<WiperRig>(p => p.Countdown == id).Last();
+
+            var item = new WiperRigModel()
+            {
+                Id = result.Id,
+                TestType = result.TestType,
+                TimeStamp = result.TimeStamp.ToString("dd.MM.yyyy HH:mm:ss"),
+                DeviceTimeStamp = result.DeviceTimeStamp.ToString("dd.MM.yyyy HH:mm:ss"),
+                CyclesSet = result.CyclesSet,
+                Countdown = result.Countdown,
+                AmountOfWater = result.AmountOfWater,
+                WiperMotorSpeed = result.WiperMotorSpeed,
+                LeftSensor = result.LeftSensor,
+                RightSensor = result.RightSensor
+            };
+
+            return item;
         }
     }
 }

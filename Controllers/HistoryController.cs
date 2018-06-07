@@ -23,8 +23,8 @@ namespace TestRESTApi.Controllers
                 {
                     Id = result.Id,
                     TestType = result.TestType,
-                    StartDate = result.StartDate.ToString("yyyy.MM.dd HH:mm:ss"),
-                    EndDate = result.EndDate.ToString("yyyy.MM.dd HH:mm:ss"),
+                    StartDate = result.StartDate.ToString("dd.MM.yyyy HH:mm:ss"),
+                    EndDate = result.EndDate.ToString("dd.MM.yyyy HH:mm:ss"),
                     CyclesSet = result.CyclesSet,
                     Countdown = result.Countdown,
                     Errors = result.Errors
