@@ -75,3 +75,4 @@
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\bin\NHibernate.xml
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\bin\Remotion.Linq.xml
 \\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\bin\Remotion.Linq.EagerFetching.xml
+\\vcn.ds.volvo.net\cli-hm\hm1163\a261593\My Documents\Visual Studio 2017\Projects\TestRESTApi\TestRESTApi\obj\Debug\TestRESTApi.csprojAssemblyReference.cache

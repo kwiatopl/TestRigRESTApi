@@ -8,8 +8,8 @@ namespace TestRESTApi.Models
     public class Overview
     {
         public string TestType;
-        public DateTime TestStart;
-        public DateTime EstimatedEndDate;
+        public string TestStart;
+        public string EstimatedEndDate;
         public int CyclesSet;
         public int Countdown;
         public int AmountOfWater;

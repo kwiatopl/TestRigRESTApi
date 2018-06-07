@@ -9,15 +9,17 @@ using TestRESTApi.Models;
 
 namespace TestRESTApi.Controllers
 {
-    public class ErrorsController : ApiController
+    public class LastController : ApiController
     {
-        public List<WiperRigModel> GetErrors()
+        
+        public List<WiperRigModel> GetResults(int id)
         {
             var db = new DatabaseService(new NHibernateSessionProvider(ConfigurationManager.ConnectionStrings["WiperDBConfig"].ConnectionString));
-            var errors = db.GetAll<WiperRig>(p => p.LeftSensor == true || p.RightSensor == true).ToList();
-            var errorsList = new List<WiperRigModel>();
+            var results = db.GetAll<WiperRig>().OrderByDescending(p => p.TimeStamp).Take(id).ToList();
 
-            foreach (var result in errors)
+            var resultsList = new List<WiperRigModel>();
+
+            foreach (var result in results)
             {
                 var item = new WiperRigModel()
                 {
@@ -33,10 +35,10 @@ namespace TestRESTApi.Controllers
                     RightSensor = result.RightSensor
                 };
 
-                errorsList.Add(item);
+                resultsList.Add(item);
             }
 
-            return errorsList;
+            return resultsList;
         }
     }
 }

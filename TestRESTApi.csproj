@@ -112,6 +112,7 @@
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\ExportController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
+    <Compile Include="Controllers\LastController.cs" />
     <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="DatabaseService.cs" />
@@ -122,8 +123,10 @@
     <Compile Include="Models\Overview.cs" />
     <Compile Include="Models\TestsHistory.cs" />
     <Compile Include="Models\TestsHistoryMap.cs" />
+    <Compile Include="Models\TestsHistoryModel.cs" />
     <Compile Include="Models\WiperRig.cs" />
     <Compile Include="Models\WiperRigMap.cs" />
+    <Compile Include="Models\WiperRigModel.cs" />
     <Compile Include="NHibernateSessionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZipPacker.cs" />
@@ -155,7 +158,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49265</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49265/</IISUrl>
+          <IISUrl>http://localhost:49266/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

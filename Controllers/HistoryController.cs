@@ -5,16 +5,35 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using TestRESTApi.Models;
 
 namespace TestRESTApi.Controllers
 {
     public class HistoryController : ApiController
     {
-        public List<TestsHistory> GetHistory()
+        public List<TestsHistoryModel> GetHistory()
         {
             var db = new DatabaseService(new NHibernateSessionProvider(ConfigurationManager.ConnectionStrings["WiperDBConfig"].ConnectionString));
             var results = db.GetAll<TestsHistory>().ToList();
-            return results;
+            var resultsList = new List<TestsHistoryModel>();
+
+            foreach(var result in results)
+            {
+                var item = new TestsHistoryModel()
+                {
+                    Id = result.Id,
+                    TestType = result.TestType,
+                    StartDate = result.StartDate.ToString("yyyy.MM.dd HH:mm:ss"),
+                    EndDate = result.EndDate.ToString("yyyy.MM.dd HH:mm:ss"),
+                    CyclesSet = result.CyclesSet,
+                    Countdown = result.Countdown,
+                    Errors = result.Errors
+                };
+
+                resultsList.Add(item);
+            } 
+
+            return resultsList;
         }
     }
 }
